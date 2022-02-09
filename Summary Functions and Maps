@@ -11,4 +11,9 @@ countries =reviews.country.unique()
 #3
 reviews_per_country = reviews.country.value_counts()
 #4
+centered_price = reviews.price - reviews.price.mean()
+#5
+bargain_idx = (reviews.points / reviews.price).idxmax()
+bargain_wine = reviews.loc[bargain_idx, 'title']
+#6
 
